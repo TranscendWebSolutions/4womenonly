@@ -1,6 +1,76 @@
 {{ define "main" }}
 <article class="text-center text-gray-700">
-    <h1 class="font-serif font-extralight text-5xl text-gray-500">{{ .Title }}</h1>
-    {{ .Content }}
+    <h1 class=" text-5xl text-gray-500">{{ .Title }}</h1>
+    <p>A ministry to equip, encourage and send</p>
+    <section class="mt-14">
+      <h2>Events</h2>
+      <table class="table-auto events">
+        <thead class="text-gray-300">
+          <tr class="border border-red-500 bg-red-500 bg-transparent rounded-t-2xl">
+            <th class="border rounded-tl-2xl p-2">Date</th>
+            <th class="border rounded-tr-2xl p-2">Speaker</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>April 17</td>
+            <td>Buffy St John</td>
+          </tr>
+          <tr>
+            <td>June 19</td>
+            <td>Pastor Frances Stafford</td>
+          </tr>
+          <tr>
+            <td>August 21</td>
+            <td>TBA</td>
+          </tr>
+          <tr>
+            <td>October 16</td>
+            <td>TBA</td>
+          </tr>
+
+        </tbody>
+           
+      </table>
+    </section>
+    <p>These Events are a time of worship, prayer, fellowship and a message for our fellow women.</p>
+    <p>Checkin is at 9:30</p>
+    <p class="mb-3">Located at Agape Life Fellowship</p>
+    <div id="map"></div>
+    <section>
+      <h2>Resources for Women in Need</h2>
+      <dl>
+        {{ range .Site.Taxonomies.tags.resource }}
+          <dt><a href="//{{ .Params.link }}">{{ .Title }}</a></dt>
+          <dd class="mb-2">{{ .Params.description }}</dd>
+        {{ end }}
+      </dl>
+    </section>
+    <section>
+      <h2>Donate</h2>
+      <button class="px-6 py-2 rounded-full bg-red-500 hover:bg-gray-700 text-white"><i class="fas fa-money-bill-alt"></i>&nbsp;Donate to 4 women only!</button>
+    </section>
+    <section class="mb-16">
+      <h2>Become a 4 Women Only Sponsor</h2>
+      <form netlify class="mt-5">
+        <div class="input">
+          <i class="fas fa-user icon"></i>
+          <input type="text" name="name" required>
+        </div>
+        <div class="input">
+          <i class="fas fa-at icon"></i>
+          <input type="email" name="email" required>
+        </div>
+        <textarea class="input" name="comment" id="" cols="30" rows="10"></textarea>
+        <button type="submit" class="input px-6 py-2 bg-red-500 ml-auto"><i class="fas fa-paper-plane text-white"></i></button>
+      </form>
+    </section>
+
+  
+
 </article>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQFnRbuEF6kEArOSPAYMYZ_UDUWU74cKo&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
 {{ end }}

@@ -1,0 +1,17 @@
+<script>
+  // Initialize and add the map
+  function initMap() {
+    // The location of agapeLife
+    const agapeLife = { lat: 37.2137479, lng: -93.4146345 };
+    // The map, centered at agapeLife
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: agapeLife,
+    });
+    // The marker, positioned at agapeLife
+    const marker = new google.maps.Marker({
+      position: agapeLife,
+      map: map,
+    });
+  }
+</script>

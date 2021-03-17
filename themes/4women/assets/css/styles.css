@@ -7,6 +7,64 @@
 /* Tailwind's utility classes - generated based on config file */
 @import "node_modules/tailwindcss/utilities";
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+
+h1, h2, h3, h4 {
+  font-family: Caveat;
+}
 h1 {
-  @apply text-2xl;
+  @apply text-4xl;
+}
+h2 { @apply text-3xl; }
+h3 { @apply text-2xl; }
+section { @apply mt-56;}
+section h2 {
+  @apply text-5xl;
+  @apply mb-10;
+}
+a { 
+  @apply text-gray-800;
+  @apply hover:text-red-500;
+}
+nav > a {
+  font-family: Caveat;
+  @apply text-3xl;
+}
+.events {
+  @apply mx-auto;
+}
+
+.events tbody td{
+  @apply p-3;
+  @apply border;
+  @apply border-gray-700;
+  @apply w-1/2;
+}
+
+#map {
+  height: 200px;
+  @apply w-5/6;
+  @apply mx-auto;
+}
+.input{
+  @apply border;
+  @apply border-red-500;
+  @apply rounded-full;
+  @apply mb-1;
+  @apply text-left;
+}
+.input .icon {
+  @apply bg-red-500;
+  @apply text-white;
+  @apply p-4;
+  @apply rounded-l-full;
+}
+textarea{
+ @apply rounded-2xl !important;
+ @apply w-full;
+}
+footer a {
+  @apply text-red-500;
+  @apply hover:text-white;
 }

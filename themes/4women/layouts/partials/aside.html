@@ -1,0 +1,14 @@
+<aside class="side-nav mr-auto w-1/6 mt-48">
+  <h2>Menu</h2>
+  <ul id="nav-menu" class="w-full">
+      {{ range .Site.Data }}
+        {{ range .menulist }}
+        <li class="p-2">
+            <a href="#{{ . }}" class="text-gray-500 hover:text-blue-400 capitalize">
+            {{ . }}
+            </a>
+        </li>
+        {{ end }}
+      {{ end }}
+  </ul>
+</aside>

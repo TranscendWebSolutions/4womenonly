@@ -1,4 +1,9 @@
 <header class="w-full px-4 pt-4">
+  <div class="header-img"></div>
+  <div class="header-img-gradient"></div>
+  <div class="header-img-grad-right"></div>
+  <div class="header-img-grad-bottom"></div>
+  <div class="header-img-mask"></div>
     {{/*  CSS functionality for menu toggle  */}}
     <style type="text/css">
         input#nav-toggle:checked~label#show-button {
@@ -14,12 +19,16 @@
         }
     </style>
 
-    <nav class="flex items-center justify-between flex-wrap">
-        <a href="{{ .Site.Home.Permalink }}" class="flex items-center text-gray-700 font-bold">
-            {{ .Site.Title }}
-        </a>
+    <nav class="flex items-center justify-center flex-wrap">
+        <div class="logo">
+          <a href="{{ .Site.Home.Permalink }}" class=" text-gray-700 ">
+            {{- partial "logo.svg" . -}}
+              <span>{{ .Site.Title }}</span>
+          </a>
+          <p class="text-center text-2xl" style="font-family: Caveat;">A ministry to equip, encourage and send</p>
+        </div>
 
-        <input id="nav-toggle" type=checkbox class="hidden">
+        <!-- <input id="nav-toggle" type=checkbox class="hidden">
         <label id="show-button" for="nav-toggle"
             class="flex items-center block sm:hidden text-gray-500 hover:text-blue-500">
             <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -33,19 +42,6 @@
                 <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
                     transform="rotate(45 10 10)" />
             </svg>
-        </label>
-
-        <ul id="nav-menu" class="sm:flex w-full sm:w-auto hidden sm:block mt-2 sm:mt-0 sm:space-x-2">
-            {{ with .Site.GetPage "/about" }}
-            <li>
-                <a href="{{ .Permalink }}" class="text-gray-500 hover:text-blue-400">{{ .Title }}</a>
-            </li>
-            {{ end }}
-<!--             {{ range .Site.Sections }}
-            <li>
-                <a href="{{ .Permalink }}" class="text-gray-500 hover:text-blue-400">{{ .Title }}</a>
-            </li>
-            {{ end }} -->
-        </ul>
+        </label> -->
     </nav>
 </header>

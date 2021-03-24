@@ -9,6 +9,53 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+.header-img, .header-img-gradient, .header-img-grad-right, .header-img-grad-bottom {
+  @apply absolute;
+  top: 0;
+  left: 0;
+  width: 35vw;
+  height: 60vh;
+}
+.header-img {
+  background-image: url(../../img/women.jpeg);
+  background-size: cover;
+
+  z-index: 100;
+}
+.header-img-gradient {
+  background: radial-gradient(circle at bottom 100px right 10px, rgba(255,255,255, 1) 0%, white 55%, rgba(255,255,255,.4) 60%, rgba(255,255,255, 0) 100%);
+  z-index: 101;
+}
+.header-img-grad-right {
+  background: linear-gradient(to right, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255, 0) 95%, white 100%);
+  z-index: 102;
+}
+.header-img-grad-bottom {
+  background: linear-gradient(to bottom, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255, 0) 95%, white 100%);
+  z-index: 103;
+}
+.header-img-mask {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  border-radius: 100% 0 0;
+  width: calc(35vw - 200px);
+  height: calc(60vh - 100px);
+  background-color: white;
+  z-index: 104;
+}
+.logo span {
+  font-family: Caveat;
+  @apply text-8xl;
+}
+.logo svg {
+  width: 63.07px;
+  height: 112.46px;
+  @apply mx-auto;
+}
 
 h1, h2, h3, h4 {
   font-family: Caveat;
@@ -18,7 +65,13 @@ h1 {
 }
 h2 { @apply text-3xl; }
 h3 { @apply text-2xl; }
-section { @apply mt-56;}
+section { 
+  @apply pb-28;
+  @apply pt-28;
+}
+section:nth-child(1) {
+  @apply pt-14;
+}
 section h2 {
   @apply text-5xl;
   @apply mb-10;
@@ -63,6 +116,9 @@ nav > a {
 textarea{
  @apply rounded-2xl !important;
  @apply w-full;
+}
+aside {
+  
 }
 footer a {
   @apply text-red-500;

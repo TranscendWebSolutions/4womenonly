@@ -1,8 +1,6 @@
 {{ define "main" }}
-<article class="text-center text-gray-700">
-    <h1 class=" text-5xl text-gray-500">{{ .Title }}</h1>
-    <p>A ministry to equip, encourage and send</p>
-    <section class="mt-14">
+  <article class="text-center text-gray-700 w-5/6 ml-auto">
+    <section class="mt-14" id="events">
       <h2>Events</h2>
       <table class="table-auto events">
         <thead class="text-gray-300">
@@ -12,32 +10,21 @@
           </tr>
         </thead>
         <tbody>
+          {{ range $.Site.Data.events.Events }}
           <tr>
-            <td>April 17</td>
-            <td>Buffy St John</td>
+            <td>{{ .Date }}</td>
+            <td>{{ .Speaker }}</td>
           </tr>
-          <tr>
-            <td>June 19</td>
-            <td>Pastor Frances Stafford</td>
-          </tr>
-          <tr>
-            <td>August 21</td>
-            <td>TBA</td>
-          </tr>
-          <tr>
-            <td>October 16</td>
-            <td>TBA</td>
-          </tr>
-
+          {{ end }}
         </tbody>
-           
       </table>
+      <p>These Events are a time of worship, prayer, fellowship and a message for our fellow women.</p>
+      <p>Checkin is at 9:30</p>
+      <p class="mb-3">Located at Agape Life Fellowship</p>
+      <div id="map"></div>
     </section>
-    <p>These Events are a time of worship, prayer, fellowship and a message for our fellow women.</p>
-    <p>Checkin is at 9:30</p>
-    <p class="mb-3">Located at Agape Life Fellowship</p>
-    <div id="map"></div>
-    <section>
+    
+    <section id="resources">
       <h2>Resources for Women in Need</h2>
       <dl>
         {{ range .Site.Taxonomies.tags.resource }}
@@ -46,11 +33,11 @@
         {{ end }}
       </dl>
     </section>
-    <section>
+    <section id="donate">
       <h2>Donate</h2>
       <button class="px-6 py-2 rounded-full bg-red-500 hover:bg-gray-700 text-white"><i class="fas fa-money-bill-alt"></i>&nbsp;Donate to 4 women only!</button>
     </section>
-    <section class="mb-16">
+    <section class="mb-16" id="sponsor">
       <h2>Become a 4 Women Only Sponsor</h2>
       <form netlify class="mt-5">
         <div class="input">
@@ -65,12 +52,6 @@
         <button type="submit" class="input px-6 py-2 bg-red-500 ml-auto"><i class="fas fa-paper-plane text-white"></i></button>
       </form>
     </section>
-
-  
-
-</article>
-<script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQFnRbuEF6kEArOSPAYMYZ_UDUWU74cKo&callback=initMap&libraries=&v=weekly"
-      async
-    ></script>
+  </article>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQFnRbuEF6kEArOSPAYMYZ_UDUWU74cKo&callback=initMap&libraries=&v=weekly" async></script>
 {{ end }}

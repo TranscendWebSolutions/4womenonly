@@ -32466,6 +32466,63 @@ video {
           animation: bounce 1s infinite;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.header-img, .header-img-gradient, .header-img-grad-right, .header-img-grad-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35vw;
+  height: 60vh;
+}
+
+.header-img {
+  background-image: url(../../img/women.jpeg);
+  background-size: cover;
+  z-index: 100;
+}
+
+.header-img-gradient {
+  background: radial-gradient(circle at bottom 100px right 10px, rgba(255,255,255, 1) 0%, white 55%, rgba(255,255,255,.4) 60%, rgba(255,255,255, 0) 100%);
+  z-index: 101;
+}
+
+.header-img-grad-right {
+  background: linear-gradient(to right, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255, 0) 95%, white 100%);
+  z-index: 102;
+}
+
+.header-img-grad-bottom {
+  background: linear-gradient(to bottom, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255, 0) 95%, white 100%);
+  z-index: 103;
+}
+
+.header-img-mask {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  border-radius: 100% 0 0;
+  width: calc(35vw - 200px);
+  height: calc(60vh - 100px);
+  background-color: white;
+  z-index: 104;
+}
+
+.logo span {
+  font-family: Caveat;
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.logo svg {
+  width: 63.07px;
+  height: 112.46px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h1, h2, h3, h4 {
   font-family: Caveat;
 }
@@ -32481,7 +32538,13 @@ h2 { font-size: 1.875rem; line-height: 2.25rem;
 h3 { font-size: 1.5rem; line-height: 2rem;
 }
 
-section { margin-top: 14rem;
+section {
+  padding-bottom: 7rem;
+  padding-top: 7rem;
+}
+
+section:nth-child(1) {
+  padding-top: 3.5rem;
 }
 
 section h2 {
@@ -32548,6 +32611,9 @@ nav > a {
 textarea{
   border-radius: 1rem !important;
   width: 100%;
+}
+
+aside {
 }
 
 footer a {

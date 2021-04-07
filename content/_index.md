@@ -1,6 +1,6 @@
 ---
 author: Dirk Olbrich
-title: 4 Women Only
+title: For Women Only
 date: 2019-05-15
 ---
 

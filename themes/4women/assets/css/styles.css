@@ -12,6 +12,9 @@
 html {
   scroll-behavior: smooth;
 }
+body{
+  @apply bg-green-400;
+}
 .header-img, .header-img-gradient, .header-img-grad-right, .header-img-grad-bottom {
   @apply absolute;
   top: 0;
@@ -26,15 +29,15 @@ html {
   z-index: 100;
 }
 .header-img-gradient {
-  background: radial-gradient(circle at bottom 100px right 10px, rgba(255,255,255, 1) 0%, white 55%, rgba(255,255,255,.4) 60%, rgba(255,255,255, 0) 100%);
+  background: radial-gradient(circle at bottom 100px right 10px, rgba(52, 211, 153, 1) 0%, rgba(52, 211, 153, 1) 55%, rgba(52, 211, 153,.4) 60%, rgba(52, 211, 153, 0) 100%);
   z-index: 101;
 }
 .header-img-grad-right {
-  background: linear-gradient(to right, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255, 0) 95%, white 100%);
+  background: linear-gradient(to right, rgba(52, 211, 153,.5) 0%, rgba(52, 211, 153,0) 5%, rgba(52, 211, 153, 0) 95%, rgb(52, 211, 153) 100%);
   z-index: 102;
 }
 .header-img-grad-bottom {
-  background: linear-gradient(to bottom, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255, 0) 95%, white 100%);
+  background: linear-gradient(to bottom, rgba(52, 211, 153,.5) 0%, rgba(52, 211, 153,0) 5%, rgba(52, 211, 153, 0) 95%, rgb(52, 211, 153) 100%);
   z-index: 103;
 }
 .header-img-mask {
@@ -44,8 +47,11 @@ html {
   border-radius: 100% 0 0;
   width: calc(35vw - 200px);
   height: calc(60vh - 100px);
-  background-color: white;
+  @apply bg-green-400;
   z-index: 104;
+}
+.logo {
+  z-index: 999;
 }
 .logo span {
   font-family: Caveat;
@@ -56,6 +62,7 @@ html {
   height: 112.46px;
   @apply mx-auto;
 }
+
 
 h1, h2, h3, h4 {
   font-family: Caveat;
@@ -107,16 +114,24 @@ nav > a {
   @apply mb-1;
   @apply text-left;
 }
+
 .input .icon {
   @apply bg-red-500;
   @apply text-white;
   @apply p-4;
   @apply rounded-l-full;
 }
+input{
+  @apply w-11/12 h-full;
+}
+input:focus, textarea:focus {
+  outline:none;
+}
 textarea{
  @apply rounded-2xl !important;
  @apply w-full;
 }
+
 aside {
   
 }
